@@ -6,7 +6,7 @@ import javax.persistence.*
 @Entity(name = "product_image")
 class ProductImage(
     private val path: String,
-    private val productId: Long = 0L
+    private val productId: Long = 0L // FK
 ) {
 
     @Id
