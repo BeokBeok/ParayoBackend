@@ -1,6 +1,6 @@
 package com.example.parayo.domain.product
 
-import java.util.*
+import com.example.parayo.domain.jpa.BaseEntity
 import javax.persistence.*
 
 @Entity(name = "product")
@@ -17,23 +17,4 @@ class Product(
     @JoinColumn(name = "productId") // FK 를 이용한 조인 쿼리
     private val images: List<ProductImage>,
     private val userId: Long
-) {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    val id: Long = 0L
-
-    var createdAt: Date = Date(0)
-    var updatedAt: Date = Date(0)
-
-    @PrePersist
-    fun prePersist() {
-        createdAt = Date()
-        updatedAt = Date()
-    }
-
-    @PreUpdate
-    fun preUpdate() {
-        updatedAt = Date()
-    }
-}
+) : BaseEntity()
