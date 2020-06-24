@@ -61,7 +61,7 @@ class TokenValidationInterceptor @Autowired constructor(
     companion object {
         private const val AUTHORIZATION = "Authorization"
         private const val BEARER = "Bearer"
-        private const val GRANT_TYPE_REFRESH = "refresh_token"
+        const val GRANT_TYPE_REFRESH = "refresh_token"
 
         // TODO Spring Security 를 사용하여 좀 더 세련된 방법으로 설정
         private val DEFAULT_ALLOWED_API_URLS = listOf(
