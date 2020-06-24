@@ -23,7 +23,7 @@ class ProductRegistrationService @Autowired constructor(
     }
 
     private fun findAndValidateImages(imageIds: List<Long>) =
-        productImageRepository.findByImageIds(imageIds).also { images ->
+        productImageRepository.findByIdIn(imageIds).also { images ->
             images.forEach { image ->
                 if (image.productId != 0L) {
                     throw ParayoException("이미 등록된 상품입니다.")
