@@ -19,7 +19,7 @@ class ProductImageService @Autowired constructor(
 ) {
 
     @Value("\${parayo.file-upload.default-dir}")
-    var uploadPath: String = ""
+    val uploadPath: String = ""
 
     fun uploadImage(image: MultipartFile): ProductImageUploadResponse {
         val filePath = saveImageFile(image)
